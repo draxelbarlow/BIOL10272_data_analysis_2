@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Analysis 2</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Data Analysis 2">
+  <meta name="author" content="Dr Axel Barlow">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/zenburn.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/custom.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    
+  <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/NTU_open-graph.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  
+  <aside class="gdbar">
+    <img src="assets/img/ntu-shield.png">
+  </aside>
+  
+  <hgroup class="auto-fadein">
+    <h1>Data Analysis 2</h1>
+    <h2>BIOL10272: Practical Techniques</h2>
+    <p>Dr Axel Barlow<br/>email: axel.barlow@ntu.ac.uk</p>
+  </hgroup>
+  
+    <a href="https://github.com/draxelbarlow/BIOL10272_data_analysis_2/zipball/gh-pages" class="example">
+     Download
+    </a>
+  
+  <article></article>  
+      
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <article data-timings="">
+    <!-- adding bold and italic options -->
+
+<style>
+em {
+  font-style: italic
+}
+strong {
+  font-weight: bold;
+}
+</style>
+
+<h2>Data analysis 2</h2>
+
+<ul>
+<li>Data visualisation</li>
+<li>Single categorical or ordinal variable: barcharts</li>
+<li>Single quantitative variable: histograms</li>
+<li>Data distributions</li>
+<li>Mean, median, and mode</li>
+<li>Sample variability: range and standard deviation</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>Data visualisation</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>A tool for data exploration and communication</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <iframe src = 'https://www.gisaid.org/' height='600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>A tool for data exploration and communication</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <iframe src = 'https://graphics.reuters.com/world-coronavirus-tracker-and-maps/vaccination-rollout-and-access/' height='600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-5" style="background:;">
+  
+  <hgroup>
+    <h2>Single categorical or ordinal variable</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-6" style="background:white;">
+  
+  <hgroup>
+    <h2>Barcharts</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>We can visualise a single categorical or ordinal variable using a <strong>barchart</strong>.</li>
+<li>Categories go on the <strong>x axis</strong> and the counts go on the <strong>y axis</strong>.</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="60%" height="60%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Barchart example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Human mitochondrial DNA; 4 nucleotides (A,C,G,T); 16,568 bp</li>
+</ul>
+
+<pre><code>##                                                                                    V1
+## 1  GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTTCGTCTGGGGGGTGTGCACGCGA
+## 2  TAGCATTGCGAGACGCTGGAGCCGGAGCACCCTATGTCGCAGTATCTGTCTTTGATTCCTGCCCCATCCCATTATTTATCGC
+## 3  ACCTACGTTCAATATTACAGGCGAACATACTTACTAAAGTGTGTTAATTAATTAATGCTTGTAGGACATAATAATAACAATT
+## 4  GAATGTCTGCACAGCCGCTTTCCACACAGACATCATAACAAAAAATTTCCACCAAACCCCCCCTCCCCCGCTTCTGGCCACA
+## 5  GCACTTAAACACATCTCTGCCAAACCCCAAAAACAAAGAACCCTAACACCAGCCTAACCAGATTTCAAATTTTATCTTTTGG
+## 6  CGGTATGCACTTTTAACAGTCACCCCCCAACTAACACATTATTTTCCCCTCCCACTCCCATACTACTAATCTCATCAATACA
+## 7  ACCCCCGCCCATCCTACCCAGCACACACACACCGCTGCTAACCCCATACCCCGAACCAACCAAACCCCAAAGACACCCCCCA
+## 8  CAGTTTATGTAGCTTACCTCCTCAAAGCAATACACTGAAAATGTTTAGACGGGCTCACATCACCCCATAAACAAATAGGTTT
+## 9  GGTCCTAGCCTTTCTATTAGCTCTTAGTAAGATTACACATGCAAGCATCCCCGTTCCAGTGAGTTCACCCTCTAAATCACCA
+## 10 CGATCAAAAGGGACAAGCATCAAGCACGCAGCAATGCAGCTCAAAACGCTTAGCCTAGCCACACCCCCACGGGAAACAGCAG
+## 11 TGATTAACCTTTAGCAATAAACGAAAGTTTAACTAAGCTATACTAACCCCAGGGTTGGTCAATTTCGTGCCAGCCACCGCGG
+## 12 TCACACGATTAACCCAAGTCAATAGAAGCCGGCGTAAAGAGTGTTTTAGATCACCCCCTCCCCAATAAAGCTAAAACTCACC
+## 13 TGAGTTGTAAAAAACTCCAGTTGACACAAAATAGACTACGAAAGTGGCTTTAACATATCTGAACACACAATAGCTAAGACCC
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-8" style="background:white;">
+  
+  <hgroup>
+    <h2>Barchart example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Human mitochondrial DNA; 4 nucleotides (A,C,G,T); 16,568 bp</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="65%" height="65%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-9" style="background:;">
+  
+  <hgroup>
+    <h2>Single quantitative variable</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-10" style="background:white;">
+  
+  <hgroup>
+    <h2>Histograms</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>We can visualise a single quantitative variable (continuous or discrete) using a histogram</li>
+<li>First we need to bin our data: sort into non-overlapping intervals of equal size</li>
+<li>The bins go on the x axis and the counts go on the y axis.</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="50%" height="50%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-11" style="background:white;">
+  
+  <hgroup>
+    <h2>Difference between barcharts and histograms</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Typically barcharts will have spaces between the bars</li>
+<li>In histograms, the bars are always touching</li>
+<li>Barchart x axes are categorical</li>
+<li>Histogram x axes are quantitative (typically have units)</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><strong>Barchart</strong></p>
+
+<p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" height="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><strong>Histogram</strong></p>
+
+<p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" height="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  
+  <hgroup>
+    <h2>Histogram example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Heights of 898 people, in metres </li>
+</ul>
+
+<pre><code>##    height
+## 1    1.86
+## 2    1.76
+## 3    1.75
+## 4    1.75
+## 5    1.87
+## 6    1.84
+## 7    1.66
+## 8    1.66
+## 9    1.80
+## 10   1.73
+## 11   1.79
+## 12   1.74
+## 13   1.70
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Binned data</li>
+</ul>
+
+<pre><code>##    start finish counts
+## 1   1.40   1.45      3
+## 2   1.45   1.50      3
+## 3   1.50   1.55     44
+## 4   1.55   1.60    122
+## 5   1.60   1.65    163
+## 6   1.65   1.70    171
+## 7   1.70   1.75    149
+## 8   1.75   1.80    146
+## 9   1.80   1.85     76
+## 10  1.85   1.90     13
+## 11  1.90   1.95      6
+## 12  1.95   2.00      1
+## 13  2.00   2.05      1
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-13" style="background:white;">
+  
+  <hgroup>
+    <h2>Histogram example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Using 14 bins</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="60%" height="60%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-14" style="background:white;">
+  
+  <hgroup>
+    <h2>Effect of bin size</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Using 7 bins</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="60%" height="60%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-15" style="background:white;">
+  
+  <hgroup>
+    <h2>Effect of bin size</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Using 28 bins</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="60%" height="60%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-16" style="background:;">
+  
+  <hgroup>
+    <h2>Data distribution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-17" style="background:white;">
+  
+  <hgroup>
+    <h2>Data distribution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>The shape of the histogram can be called a <strong>distribution</strong></li>
+<li>Height is an example of the <strong>normal distribution</strong></li>
+<li>It looks (more or less) like a symmetrical bell</li>
+<li>Very tall and very short people are rare, most people are around the middle</li>
+<li>Many other variables: birth weight, blood pressure, measurement error</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./assets/img/church-bell-152195.svg" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="50%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" height="50%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-18" style="background:white;">
+  
+  <hgroup>
+    <h2>Describing distributions for quantitative variables</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="100%" height="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-19" style="background:;">
+  
+  <hgroup>
+    <h2>Mean, median, and mode</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  
+  <hgroup>
+    <h2>An average</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>An average describes the central position of the distribution</li>
+<li>It summarises the entire distribution in a single value</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>We use three types: 
+
+<ul>
+<li><code>mean</code></li>
+<li><code>median</code></li>
+<li><code>mode</code></li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>How are they calculated?</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Mean</h3>
+
+<ul>
+<li>Add all values together and divide by number of observations</li>
+<li>Good for continuous quantitative variables, discrete variables may need rounding</li>
+</ul>
+
+<h3>Median</h3>
+
+<ul>
+<li>Arrange values from smallest to largest and pick the middle one</li>
+<li>Good for ordinal and quantitative continuous and discrete variables</li>
+</ul>
+
+<h3>Mode</h3>
+
+<ul>
+<li>The most frequently occurring value</li>
+<li>Good for ordinal and discrete quantitative variables</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Quantitative discrete variable example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="console">1  2  3  3  4  4  4  5  5  5  5  6  6  6  7  7  8  9 10
+</code></pre>
+
+<h3>Mean</h3>
+
+<pre><code class="console">1+2+3+3+4+4+4+5+5+5+5+6+6+6+7+7+8+9+10 = 100
+100 / 19 = 5.263158
+</code></pre>
+
+<h3>Median</h3>
+
+<pre><code class="console">5
+</code></pre>
+
+<h3>Mode</h3>
+
+<pre><code class="console">5
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-23" style="background:white;">
+  
+  <hgroup>
+    <h2>Continuous variable example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Height of 500 women, plotted as a histogram</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="100%" height="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><span style="color:#7570B3; font-weight:bold">mean = 1.651378</span><br>
+<span style="color:#D95F02; font-weight:bold">median = 1.6475637</span></p>
+
+<ul class = "build incremental">
+<li>Mean and median are virtually identical</li>
+<li>A feature of the normal distribution</li>
+<li>So why do we need different measures?</li>
+<li>Not all variables are normally distributed</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-24" style="background:white;">
+  
+  <hgroup>
+    <h2>Ancient DNA fragment length</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>DNA in ancient samples is highly fragmented</li>
+<li>The fragment lengths have a <strong>skewed distribution</strong></li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="100%" height="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/Dz_cat_resized.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="75%" /></p>
+
+<p>800 year old cat (Carl Vivian, Uni Leicester)</p>
+
+<p><span style="color:#7570B3; font-weight:bold">mean = 45.8054171</span><br>
+<span style="color:#D95F02; font-weight:bold">median = 41</span><br>
+<span style="color:#E7298A; font-weight:bold">mode = 31</span></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-25" style="background:;">
+  
+  <hgroup>
+    <h2>Sample variability</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-26" style="background:white;">
+  
+  <hgroup>
+    <h2>An average doesn&#39;t give the whole picture</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" width="95%" height="95%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Sample variability</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><strong>Variability</strong> describes how narrow or spread out the distribution is</li>
+<li>Also called <strong>dispersion</strong>, <strong>scatter</strong> or <strong>spread</strong></li>
+<li>We will look at two ways of measuring variability:</li>
+</ul>
+
+<h3>Range</h3>
+
+<ul>
+<li>The maximum minus the minimum values</li>
+</ul>
+
+<h3>Standard deviation</h3>
+
+<ul>
+<li>More complex</li>
+<li>Positive number in same units as the data</li>
+<li>Bigger numbers indicate higher variability</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-28" style="background:white;">
+  
+  <hgroup>
+    <h2>Range</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-20-1.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="95%" height="95%" style="display: block; margin: auto;" /></p>
+
+<ul>
+<li><strong>Mean = 15.0149312</strong></li>
+<li><span style="color:#7570B3; font-weight:bold">Range = 27.6507856 - 3.017839 = 24.6329467</span> </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Standard deviation</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Complex mathematical formula, the value is easy to understand</li>
+<li>In research science, we would just use a computer to calculate!</li>
+<li>square root (sum of squared differences from mean, divided by sample size minus 1)</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Human</th>
+<th>Height</th>
+<th>Mean</th>
+<th>Difference</th>
+<th>Squared</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>160</td>
+<td>165.33</td>
+<td>-5.33</td>
+<td>28.44</td>
+</tr>
+<tr>
+<td>2</td>
+<td>166</td>
+<td>165.33</td>
+<td>0.67</td>
+<td>0.44</td>
+</tr>
+<tr>
+<td>3</td>
+<td>168</td>
+<td>165.33</td>
+<td>2.67</td>
+<td>7.11</td>
+</tr>
+<tr>
+<td>4</td>
+<td>161</td>
+<td>165.33</td>
+<td>-4.33</td>
+<td>18.78</td>
+</tr>
+<tr>
+<td>5</td>
+<td>167</td>
+<td>165.33</td>
+<td>1.67</td>
+<td>2.78</td>
+</tr>
+<tr>
+<td>6</td>
+<td>170</td>
+<td>165.33</td>
+<td>4.67</td>
+<td>21.78</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>TOTAL</td>
+<td>79.33</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>SD = square root (sum of squares / 6 - 1) = square root (79.33/5) = <strong>3.98</strong></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Or just use a computer</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">heights &lt;- c(160, 166, 168, 161, 167, 170)
+mean(heights)
+</code></pre>
+
+<pre><code>## [1] 165.3333
+</code></pre>
+
+<pre><code class="r">sd(heights)
+</code></pre>
+
+<pre><code>## [1] 3.983298
+</code></pre>
+
+<h3>Now isn&#39;t that easier :)</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-31" style="background:white;">
+  
+  <hgroup>
+    <h2>Standard deviation and the normal distribution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="95%" height="95%" style="display: block; margin: auto;" /></p>
+
+<ul>
+<li><strong>Mean = 15.0149312</strong>, <span style="color:#E7298A; font-weight:bold">Standard deviation = 3.0303673</span> </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="slide-32" style="background:white;">
+  
+  <hgroup>
+    <h2>Standard deviation and the normal distribution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="95%" height="95%" style="display: block; margin: auto;" /></p>
+
+<ul>
+<li><strong>Mean = 15.0149312</strong>, <span style="color:#E7298A; font-weight:bold">Standard deviation = 3.0303673</span> </li>
+<li>68% of observations fall within 1 SD of the mean, 95% with 2 SDs, and 99.7% within 3 SDs</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Data analysis 2</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Data visualisation</li>
+<li>Single categorical or ordinal variable: barcharts</li>
+<li>Single quantitative variable: histograms</li>
+<li>Data distributions</li>
+<li>Mean, median, and mode</li>
+<li>Sample variability: range and standard deviatio</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="thank-you-slide segue nobackground" id="slide-34">
+  <aside class="gdbar right"><img src="assets/img/ntu-shield.png"></aside>
+  <article class="flexbox vleft auto-fadein">
+    <h2>Next time</h2>
+    <p><strong>Analysis of two variables, and hypothesis testing</strong></p>
+
+  </article>
+
+  <p class="auto-fadein" data-config-contact="">
+    
+  </p>
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data visualisation'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='A tool for data exploration and communication'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='A tool for data exploration and communication'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Single categorical or ordinal variable'>
+         5
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Barcharts'>
+         6
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Barchart example'>
+         7
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Barchart example'>
+         8
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Single quantitative variable'>
+         9
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Histograms'>
+         10
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Difference between barcharts and histograms'>
+         11
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Histogram example'>
+         12
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Histogram example'>
+         13
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Effect of bin size'>
+         14
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Effect of bin size'>
+         15
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Data distribution'>
+         16
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Data distribution'>
+         17
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Describing distributions for quantitative variables'>
+         18
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Mean, median, and mode'>
+         19
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='An average'>
+         20
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='How are they calculated?'>
+         21
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Quantitative discrete variable example'>
+         22
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Continuous variable example'>
+         23
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Ancient DNA fragment length'>
+         24
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Sample variability'>
+         25
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='An average doesn&#39;t give the whole picture'>
+         26
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Sample variability'>
+         27
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Range'>
+         28
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Standard deviation'>
+         29
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Or just use a computer'>
+         30
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Standard deviation and the normal distribution'>
+         31
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Standard deviation and the normal distribution'>
+         32
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Data analysis 2'>
+         33
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Next time'>
+         34
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
