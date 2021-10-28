@@ -446,7 +446,7 @@ sd(heights)
 - Single quantitative variable: histograms
 - Data distributions
 - Mean, median, and mode
-- Sample variability: range and standard deviatio
+- Sample variability: range and standard deviation
 
 --- &thankyou
 
